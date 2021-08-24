@@ -1,10 +1,9 @@
-
 <html>
 <head>
 <title></title>
 <script>
-var checkPalindrome= ()=> {
-let str ="this is swati 121";
+var checkPalindrome= (str)=> {
+//let str ="this is swati 121";
 let words=str.split(' ')
 console.log(words)
 let count=0;
@@ -16,14 +15,34 @@ count++
 })
 if(count>0){
 console.log('palidrome found')
-alert("palidrome exits in a sentense")
+//alert("palidrome exits in a sentense")
+document.getElementById("demo").innerHTML="Palindrome Exist in a sentense";
 }
 else{
-alert("palidrome exits not in a sentense")
+//alert("palidrome exits not in a sentense")
+document.getElementById("demo").innerHTML="Palindrome  Not Exist in a sentense";
+
 console.log('palidrome not found')
 }
 }
-checkPalindrome();
+var myFunction=()=> {
+  var x = document.getElementById("myTextarea").value;
+document.getElementById("demo").innerHTML = x;
+  return checkPalindrome(x);
+}
+
 </script>
+<body>
+
+<h1>Palindrome checker</h1>
+
+
+<form>
+<label for="text">Enter sentence</label>
+<textarea type="textarea" id="myTextarea" name="text"></textarea><br><br>
+<button type="button" value="Click me" onclick="myFunction()">check</button>
+<p><b id="demo"></b></p>
+</form>
+</body>
 </head>
 </html>
